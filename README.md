@@ -1,3 +1,5 @@
+![](https://travis-ci.org/ttionya/BestTrace.svg?branch=master)
+
 # BestTrace
 
 ### Linux

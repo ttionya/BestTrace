@@ -1,0 +1,15 @@
+language: bash
+
+services:
+  - docker
+
+env:
+  - REPO_NAME=ttionya/besttrace
+
+script:
+  - docker build -t ${REPO_NAME} .
+  - docker image ls
+  - docker run --rm -it ${REPO_NAME} -V
+
+after_success:
+  - echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin && docker push ${REPO_NAME}
